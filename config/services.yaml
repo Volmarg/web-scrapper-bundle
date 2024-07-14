@@ -1,0 +1,26 @@
+parameters:
+    # No need to split into prod / dev because in both cases ip will be the same as that's just internal service
+    proxy_provider.log.file_path: '%kernel.logs_dir%/%kernel.environment%/proxy-provider-bridge.log'
+    proxy_provider.log.name: 'ProxyProviderBridge'
+
+    # 5s was to small (even tho it should be fine in a lot of cases)
+    ## that's probably due to proxy needing to make connection, get data etc. (?)
+    ## 8s then was too small as well, search engines were taking 10-15s sometimes :/
+    scrap.config.max_timeout_seconds: 15
+
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    WebScrapperBundle\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    WebScrapperBundle\Service\ScrapEngine\HeadlessBrowserInterface: '@WebScrapperBundle\Service\ScrapEngine\HeadlessChromeScrapEngine'
+    ProxyProviderBridge\Service\BridgeService:
+        public: true
