@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea902b6eb0227e6593ec2b4ec22071f9",
+    "content-hash": "7937ddaf892885ad7d3937788977dc71",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -5348,11 +5348,17 @@
         },
         {
             "name": "volmarg/proxy-provider-bridge",
-            "version": "dev-master",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Volmarg/proxy-provider-bridge.git",
+                "reference": "4c61ef4b8a83dda7a882f5ae10798b8adc9df48e"
+            },
             "dist": {
-                "type": "path",
-                "url": "/var/www/bundles/proxy-provider-bridge",
-                "reference": "7a1fcd1cf19498807e2a0b1823bd80d6a43d454c"
+                "type": "zip",
+                "url": "https://api.github.com/repos/Volmarg/proxy-provider-bridge/zipball/4c61ef4b8a83dda7a882f5ae10798b8adc9df48e",
+                "reference": "4c61ef4b8a83dda7a882f5ae10798b8adc9df48e",
+                "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
@@ -5373,6 +5379,7 @@
                 "symfony/symfony": "*",
                 "symfony/translation-contracts": ">=3.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "symfony": {
@@ -5401,9 +5408,11 @@
                 "proprietary"
             ],
             "description": "Bridge for communication with Proxy Provider",
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "source": "https://github.com/Volmarg/proxy-provider-bridge/tree/main",
+                "issues": "https://github.com/Volmarg/proxy-provider-bridge/issues"
+            },
+            "time": "2024-07-14T12:38:59+00:00"
         }
     ],
     "packages-dev": [],
@@ -5422,5 +5431,5 @@
         "ext-libxml": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

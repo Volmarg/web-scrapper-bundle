@@ -1,5 +1,5 @@
 {
-    "name": "volmarg/web-scrapper",
+    "name": "volmarg/web-scrapper-bundle",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -24,8 +24,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "/var/www/bundles/proxy-provider-bridge"
+            "type": "vcs",
+            "url": "https://github.com/Volmarg/proxy-provider-bridge"
         }
     ],
     "config": {
